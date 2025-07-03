@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8A7134C6-699F-461F-9BDC-29448606900F}|ServiceLayer\\ServiceLayer.csproj|d:\\git work\\work now\\fahd project\\backend\\backendapi\\servicelayer\\userstatus\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A7134C6-699F-461F-9BDC-29448606900F}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\userstatus\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C7D872E-1B9E-45A9-8F5A-A540A0ADBB15}|HelperLayer\\HelperLayer.csproj|d:\\git work\\work now\\fahd project\\backend\\backendapi\\helperlayer\\constants\\messagekeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C7D872E-1B9E-45A9-8F5A-A540A0ADBB15}|HelperLayer\\HelperLayer.csproj|solutionrelative:helperlayer\\constants\\messagekeys.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C7D872E-1B9E-45A9-8F5A-A540A0ADBB15}|HelperLayer\\HelperLayer.csproj|d:\\git work\\work now\\fahd project\\backend\\backendapi\\helperlayer\\constants\\language.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C7D872E-1B9E-45A9-8F5A-A540A0ADBB15}|HelperLayer\\HelperLayer.csproj|solutionrelative:helperlayer\\constants\\language.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C7D872E-1B9E-45A9-8F5A-A540A0ADBB15}|HelperLayer\\HelperLayer.csproj|d:\\git work\\work now\\fahd project\\backend\\backendapi\\helperlayer\\constants\\messages\\arabicmessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C7D872E-1B9E-45A9-8F5A-A540A0ADBB15}|HelperLayer\\HelperLayer.csproj|solutionrelative:helperlayer\\constants\\messages\\arabicmessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8A7134C6-699F-461F-9BDC-29448606900F}|ServiceLayer\\ServiceLayer.csproj|d:\\git work\\work now\\fahd project\\backend\\backendapi\\servicelayer\\userstatus\\interface\\iusre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8A7134C6-699F-461F-9BDC-29448606900F}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\userstatus\\interface\\iusre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ArabicMessages.cs",
+              "DocumentMoniker": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\HelperLayer\\Constants\\Messages\\ArabicMessages.cs",
+              "RelativeDocumentMoniker": "HelperLayer\\Constants\\Messages\\ArabicMessages.cs",
+              "ToolTip": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\HelperLayer\\Constants\\Messages\\ArabicMessages.cs",
+              "RelativeToolTip": "HelperLayer\\Constants\\Messages\\ArabicMessages.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T22:06:36.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Language.cs",
+              "DocumentMoniker": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\HelperLayer\\Constants\\Language.cs",
+              "RelativeDocumentMoniker": "HelperLayer\\Constants\\Language.cs",
+              "ToolTip": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\HelperLayer\\Constants\\Language.cs",
+              "RelativeToolTip": "HelperLayer\\Constants\\Language.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T22:06:30.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MessageKeys.cs",
+              "DocumentMoniker": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\HelperLayer\\Constants\\MessageKeys.cs",
+              "RelativeDocumentMoniker": "HelperLayer\\Constants\\MessageKeys.cs",
+              "ToolTip": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\HelperLayer\\Constants\\MessageKeys.cs",
+              "RelativeToolTip": "HelperLayer\\Constants\\MessageKeys.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T22:06:00.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\ServiceLayer\\UserStatus\\Service\\UserService.cs",
+              "RelativeDocumentMoniker": "ServiceLayer\\UserStatus\\Service\\UserService.cs",
+              "ToolTip": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\ServiceLayer\\UserStatus\\Service\\UserService.cs",
+              "RelativeToolTip": "ServiceLayer\\UserStatus\\Service\\UserService.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAmwCwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T22:01:28.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUsre.cs",
+              "DocumentMoniker": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\ServiceLayer\\UserStatus\\Interface\\IUsre.cs",
+              "RelativeDocumentMoniker": "ServiceLayer\\UserStatus\\Interface\\IUsre.cs",
+              "ToolTip": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\ServiceLayer\\UserStatus\\Interface\\IUsre.cs",
+              "RelativeToolTip": "ServiceLayer\\UserStatus\\Interface\\IUsre.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T14:06:36.874Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

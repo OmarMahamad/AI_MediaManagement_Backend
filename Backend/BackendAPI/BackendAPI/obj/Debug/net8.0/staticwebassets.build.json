@@ -1,0 +1,20 @@
+{
+  "Version": 1,
+  "Hash": "dBDZOXlBnxcchWY49efYEykLgqcFoqXTC4TXLrcLl8Y=",
+  "Source": "BackendAPI",
+  "BasePath": "_content/BackendAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BackendAPI\\wwwroot",
+      "Source": "BackendAPI",
+      "ContentRoot": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\",
+      "BasePath": "_content/BackendAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [],
+  "Endpoints": []
+}

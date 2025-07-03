@@ -1,0 +1,30 @@
+user entity 
+{
+IdUser
+Frist_Name
+Last_Name
+Phone
+Email
+Password
+Full_Name=Frist_Name+Last_Name
+role
+}
+
+usreroleentit enum{
+Admin
+user
+Certified_writer
+Financial_accounts
+}
+
+SubscriptionType enum{
+Free
+Basic
+Enterprise
+}
+
+Subscription entity{
+IdSubscription
+IdUser
+NumOfword
+}
