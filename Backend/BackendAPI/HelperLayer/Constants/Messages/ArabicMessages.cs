@@ -16,7 +16,15 @@ namespace HelperLayer.Constants.Messages
             { MessageKeys.LoginSuccess, "تم تسجيل الدخول بنجاح." },
             { MessageKeys.RegisterSuccess, "تم تسجيل مستخدم جديد بنجاح." },
             { MessageKeys.EmailNotFound, "لم يتم العثور على هذا البريد الإلكتروني." },
+            { MessageKeys.IsEmailVerified, "لم يتم توثيق الحساب." },
             { MessageKeys.FoundEmail, "هذا المستخدم موجود." },
+            { MessageKeys.ResetPassword, "اعادة ضبط كلمة المرور." },
+            { MessageKeys.CheckEmail, "التحقق من البريد الإلكتروني." },
+            { MessageKeys.SendCode, "رمز التحقق الخاص بك هو: {0}." },
+            { MessageKeys.ExpiryDateCode, "هذا الكود انتهت صَّلاحِيَته." },
+            { MessageKeys.CodeNotFound, "هذا الكد غير موجود." },
+            { MessageKeys.UsedCode, "هذا الكود استخدم." },
+            { MessageKeys.AccessCode, "هذا الكود صالح." },
         };
     }
 }

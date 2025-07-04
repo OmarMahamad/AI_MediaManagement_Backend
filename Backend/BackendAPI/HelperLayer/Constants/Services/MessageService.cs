@@ -9,9 +9,9 @@ namespace HelperLayer.Constants.Services
 {
     public class MessageService
     {
-        public string GetMessage(string key, Language language)
+        public string GetMessage(string key, Language language, params object[] args)
         {
-            return language switch
+            string template = language switch
             {
                 Language.Arabic => ArabicMessages.Messages.ContainsKey(key)
                     ? ArabicMessages.Messages[key]
@@ -21,6 +21,10 @@ namespace HelperLayer.Constants.Services
                     : "Unknown message",
                 _ => "Language not supported"
             };
+
+            return string.Format(template, args);
         }
+
+
     }
 }

@@ -398,7 +398,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\RepositoryLayer\\RepositoryLayer.csproj": {
+                "projectPath": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\RepositoryLayer\\RepositoryLayer.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

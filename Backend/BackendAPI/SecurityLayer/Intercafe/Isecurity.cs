@@ -8,10 +8,10 @@ namespace SecurityLayer.Intercafe
 {
     public interface Isecurity
     {
-        
         string HashPassword(string originalValue, out string salt);
         bool VerifyPassword(string hashedValue, string originalValue, string salt);
         string VerifyEmail(string email);
-        string GenerateCode();
+        string GenerateOtpCode(int length = 6);
+        
     }
 }

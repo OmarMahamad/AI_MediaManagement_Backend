@@ -12,3 +12,4 @@ D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\n
 D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.pdb
 D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.genruntimeconfig.cache
 D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\ref\RepositoryLayer.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.sourcelink.json

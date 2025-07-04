@@ -19,3 +19,4 @@ D:\Git work\work now\Fahd project\Backend\BackendAPI\ServiceLayer\obj\Debug\net8
 D:\Git work\work now\Fahd project\Backend\BackendAPI\ServiceLayer\obj\Debug\net8.0\refint\ServiceLayer.dll
 D:\Git work\work now\Fahd project\Backend\BackendAPI\ServiceLayer\obj\Debug\net8.0\ServiceLayer.pdb
 D:\Git work\work now\Fahd project\Backend\BackendAPI\ServiceLayer\obj\Debug\net8.0\ref\ServiceLayer.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\ServiceLayer\obj\Debug\net8.0\ServiceLayer.sourcelink.json

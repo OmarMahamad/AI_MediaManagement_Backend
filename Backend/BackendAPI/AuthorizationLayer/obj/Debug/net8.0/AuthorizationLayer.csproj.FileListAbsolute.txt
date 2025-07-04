@@ -13,3 +13,4 @@ D:\Git work\work now\Fahd project\Backend\BackendAPI\AuthorizationLayer\obj\Debu
 D:\Git work\work now\Fahd project\Backend\BackendAPI\AuthorizationLayer\obj\Debug\net8.0\refint\AuthorizationLayer.dll
 D:\Git work\work now\Fahd project\Backend\BackendAPI\AuthorizationLayer\obj\Debug\net8.0\AuthorizationLayer.pdb
 D:\Git work\work now\Fahd project\Backend\BackendAPI\AuthorizationLayer\obj\Debug\net8.0\ref\AuthorizationLayer.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\AuthorizationLayer\obj\Debug\net8.0\AuthorizationLayer.sourcelink.json

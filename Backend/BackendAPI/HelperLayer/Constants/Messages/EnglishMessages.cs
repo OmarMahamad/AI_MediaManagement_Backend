@@ -15,7 +15,14 @@ namespace HelperLayer.Constants.Messages
             { MessageKeys.SubscriptionExpired, "Subscription expired." },
             { MessageKeys.LoginSuccess, "Login successful." },
             { MessageKeys.EmailNotFound, "This Emial not Found." },
-            { MessageKeys.FoundEmail, "This Emial Exit." }
+            { MessageKeys.SendCode, "Your verification code is: {0}" },
+            { MessageKeys.ResetPassword, "Reset Password." },
+            { MessageKeys.CheckEmail, "Check your Email." },
+            { MessageKeys.CodeNotFound, "This Code not Found." },
+            { MessageKeys.UsedCode, "This Code used." },
+            { MessageKeys.ExpiryDateCode, "This code has expired." },
+            { MessageKeys.AccessCode, "This code is valid." },
+            { MessageKeys.IsEmailVerified, "This Emial not Verified." },
         };
     }
 }

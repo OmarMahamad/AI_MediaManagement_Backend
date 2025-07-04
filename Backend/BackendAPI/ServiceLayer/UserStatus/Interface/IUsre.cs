@@ -14,7 +14,12 @@ namespace ServiceLayer.UserStatus.Interface
         //Task LogoutAsync();
         Task DeleteUserAsync(int id);
         Task<string> RegisterUserAsync(RegisterDto registerDto, string Pathfile);
-        Task ForgotPasswordAsync();
-        
+        Task<string> ForgotPasswordAsync(string email);
+        Task<string> CheckOtpCode(string code);
+
+        Task<bool> EmailVerified(string email);
+        Task<bool> IsEmailVerified(string email);
+
+
     }
 }

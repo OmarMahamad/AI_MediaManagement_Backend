@@ -57,6 +57,36 @@ namespace RepositoryLayer.Migrations
                     b.ToTable("authorizationTokens");
                 });
 
+            modelBuilder.Entity("RepositoryLayer.Entitys.AuthorizationEntity.OtpCode", b =>
+                {
+                    b.Property<int>("OtpCodeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OtpCodeId"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsUsed")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("OtpCodeId");
+
+                    b.HasIndex("Code");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("otpCodes");
+                });
+
             modelBuilder.Entity("RepositoryLayer.Entitys.ContantEntity.Content", b =>
                 {
                     b.Property<int>("ContentId")
@@ -263,6 +293,17 @@ namespace RepositoryLayer.Migrations
                 });
 
             modelBuilder.Entity("RepositoryLayer.Entitys.AuthorizationEntity.AuthorizationToken", b =>
+                {
+                    b.HasOne("RepositoryLayer.Entitys.UserEntity.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("RepositoryLayer.Entitys.AuthorizationEntity.OtpCode", b =>
                 {
                     b.HasOne("RepositoryLayer.Entitys.UserEntity.User", "User")
                         .WithMany()

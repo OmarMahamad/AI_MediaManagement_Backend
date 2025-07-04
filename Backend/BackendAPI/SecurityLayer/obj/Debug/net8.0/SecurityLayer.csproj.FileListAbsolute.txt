@@ -9,3 +9,8 @@ D:\Git work\work now\Fahd project\Backend\BackendAPI\SecurityLayer\obj\Debug\net
 D:\Git work\work now\Fahd project\Backend\BackendAPI\SecurityLayer\obj\Debug\net8.0\refint\SecurityLayer.dll
 D:\Git work\work now\Fahd project\Backend\BackendAPI\SecurityLayer\obj\Debug\net8.0\SecurityLayer.pdb
 D:\Git work\work now\Fahd project\Backend\BackendAPI\SecurityLayer\obj\Debug\net8.0\ref\SecurityLayer.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\SecurityLayer\obj\Debug\net8.0\SecurityLayer.sourcelink.json
+D:\Git work\work now\Fahd project\Backend\BackendAPI\SecurityLayer\bin\Debug\net8.0\RepositoryLayer.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\SecurityLayer\bin\Debug\net8.0\RepositoryLayer.pdb
+D:\Git work\work now\Fahd project\Backend\BackendAPI\SecurityLayer\obj\Debug\net8.0\SecurityLayer.csproj.AssemblyReference.cache
+D:\Git work\work now\Fahd project\Backend\BackendAPI\SecurityLayer\obj\Debug\net8.0\Security.E82C320A.Up2Date

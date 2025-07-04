@@ -10,12 +10,13 @@ using AuthorizationLayer.Service;
 using SecurityLayer.Intercafe;
 using SecurityLayer.Service;
 using HelperLayer.Notifecation.Email.Interface;
-using HelperLayer.Notifecation.Email.Secive;
+
 using HelperLayer.Constants.Services;
 using ServiceLayer.UserStatus.Interface;
 using ServiceLayer.UserStatus.Service;
 using HelperLayer.File.Service;
 using HelperLayer.File.Interface;
+using HelperLayer.Notifecation.Email.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -10,3 +10,4 @@ D:\Git work\work now\Fahd project\Backend\BackendAPI\HelperLayer\obj\Debug\net8.
 D:\Git work\work now\Fahd project\Backend\BackendAPI\HelperLayer\obj\Debug\net8.0\refint\HelperLayer.dll
 D:\Git work\work now\Fahd project\Backend\BackendAPI\HelperLayer\obj\Debug\net8.0\HelperLayer.pdb
 D:\Git work\work now\Fahd project\Backend\BackendAPI\HelperLayer\obj\Debug\net8.0\ref\HelperLayer.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\HelperLayer\obj\Debug\net8.0\HelperLayer.sourcelink.json

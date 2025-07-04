@@ -17,6 +17,7 @@ namespace RepositoryLayer
 
         public DbSet<AuthorizationToken> authorizationTokens { get; set; }
         public DbSet<Admin> admins { get; set; }
+        public DbSet<OtpCode> otpCodes { get; set; }
         public DbSet<Writer> writers { get; set; }
         public DbSet<FinancialAccounts> financialAccounts { get; set; }
         public DbSet<PaymentTransaction> paymentTransactions { get; set; }
