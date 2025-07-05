@@ -12,7 +12,8 @@ namespace HelperLayer.File.Service
     public class FileService : IFile
     {
         private readonly IWebHostEnvironment _environment;
-
+        private const string userpathUserdefault = $"\\Image\\User\\Userdefault.png";
+        private const string userpath = $"\\Image\\";
         public FileService(IWebHostEnvironment webHost)
         {
             _environment = webHost;
@@ -25,7 +26,7 @@ namespace HelperLayer.File.Service
             // إذا لم يتم رفع أي ملف، استخدم الصورة الافتراضية
             if (formFile == null)
             {
-                imgFilePath = $"\\File\\Default\\Userdefault.png";
+                imgFilePath = userpathUserdefault;
                 return imgFilePath;
             }
 
@@ -33,7 +34,7 @@ namespace HelperLayer.File.Service
             string ext = Path.GetExtension(formFile.FileName);
             string fullname = id + ext;
 
-            var imgfile = $"\\File\\User\\{folderName}\\" + fullname;
+            var imgfile = $"\\Image\\{folderName}\\" + fullname;
 
             string fullpath = _environment.WebRootPath + imgfile;
 
@@ -104,5 +105,34 @@ namespace HelperLayer.File.Service
 
             return string.Empty;
         }
+
+        public async Task<string> DeleteImageAsync(string file, string folder)
+        {
+            if (string.IsNullOrWhiteSpace(file))
+                return "Invalid file name.";
+
+            if (string.IsNullOrWhiteSpace(folder))
+                return "Invalid folder name.";
+
+            // مسار الصورة الكامل
+            var imagePath = Path.Combine(_environment.WebRootPath, "file", folder, file);
+
+            if (System.IO.File.Exists(imagePath))
+            {
+                try
+                {
+                    System.IO.File.Delete(imagePath);
+                    return "Image deleted successfully.";
+                }
+                catch (Exception ex)
+                {
+                    // تسجيل أو إرجاع الخطأ
+                    return $"Failed to delete image: {ex.Message}";
+                }
+            }
+
+            return "Image not found.";
+        }
+
     }
 }

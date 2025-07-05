@@ -13,5 +13,6 @@ namespace HelperLayer.File.Interface
         string? ProcessFileAntherFile(IFormFile formFile, string folderName);
         /*string ProcessFileAntherFile(IFormFile formFile, string folderName, Course course);*/
         Task<string> GetImgAsync(string file, string fulder);
+        Task<string> DeleteImageAsync(string file, string fulder);
     }
 }

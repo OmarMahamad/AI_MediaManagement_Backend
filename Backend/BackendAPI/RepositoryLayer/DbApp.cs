@@ -16,6 +16,7 @@ namespace RepositoryLayer
         public DbApp(DbContextOptions options) : base(options) { }
 
         public DbSet<AuthorizationToken> authorizationTokens { get; set; }
+        public DbSet<EmailVerificationToken> emailVerificationTokens { get; set; }
         public DbSet<Admin> admins { get; set; }
         public DbSet<OtpCode> otpCodes { get; set; }
         public DbSet<Writer> writers { get; set; }

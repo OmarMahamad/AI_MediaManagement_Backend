@@ -36,13 +36,14 @@ namespace RepositoryLayer.Service
 
         public async Task EditItemAsync(int id, T item)
         {
-            var itemexit=await GetItemAsync(id);
+            var itemexit = await GetItemAsync(id);
             if (itemexit == null)
                 return;
-           
-            item=itemexit;
+
+            _dbApp.Entry(itemexit).CurrentValues.SetValues(item);
             await _dbApp.SaveChangesAsync();
         }
+
 
         public Task<T> FilterByWhereAsync(Expression<Func<T, bool>>? predicate = null)
         {

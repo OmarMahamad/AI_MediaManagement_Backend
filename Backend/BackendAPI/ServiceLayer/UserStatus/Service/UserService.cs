@@ -26,10 +26,13 @@ namespace ServiceLayer.UserStatus.Service
         private readonly IEmail _email;
         private readonly IRepository<User> _repo;
         private readonly IRepository<OtpCode> _repocode;
+        private readonly IRepository<EmailVerificationToken> _repoTokn;
         private readonly IRepository<AuthorizationToken> _repoAutho;
         private readonly MessageService _message;
-        public UserService(Isecurity security, IAuthorization auth, IRepository<OtpCode> repocode, IRepository<AuthorizationToken> repoAutho , IEmail email, IRepository<User> repo, MessageService message)
+        private string mes = "";
+        public UserService(Isecurity security, IAuthorization auth, IRepository<EmailVerificationToken> repoTokn , IRepository<OtpCode> repocode, IRepository<AuthorizationToken> repoAutho , IEmail email, IRepository<User> repo, MessageService message)
         {
+            _repoTokn = repoTokn;
             _repocode = repocode;
             _auth = auth;
             _repoAutho = repoAutho;
@@ -59,7 +62,6 @@ namespace ServiceLayer.UserStatus.Service
             return _message.GetMessage(MessageKeys.AccessCode, Language.English);
         }
         public async Task DeleteUserAsync(int id)=> await _repo.DeleteItemAsync(id);
-
         public async Task<bool> EmailVerified(string email)
         {
             var user = await _repo.FirstOrderAsync(u => u.Email == email);
@@ -69,8 +71,6 @@ namespace ServiceLayer.UserStatus.Service
             await _repo.EditItemAsync(user.UserId, user);
             return true;
         }
-
-
         public async Task<string> ForgotPasswordAsync(string email)
         {
             var user=await _repo.FirstOrderAsync(u=>u.Email == email);
@@ -90,7 +90,6 @@ namespace ServiceLayer.UserStatus.Service
 
             return _message.GetMessage(MessageKeys.CheckEmail,Language.English);
         }
-
         public async Task<bool> IsEmailVerified(string email)
         {
             var userEntity = await _repo.FirstOrderAsync(u => u.Email == email);
@@ -98,8 +97,6 @@ namespace ServiceLayer.UserStatus.Service
 
             return userEntity.IsEmailVerified;
         }
-
-
         public async Task<string> LoginAsync(LoginDto loginDto)
         {
             var user = await _repo.FirstOrderAsync(u => u.Email == loginDto.Email);
@@ -124,7 +121,7 @@ namespace ServiceLayer.UserStatus.Service
                 IssuedAt = DateTime.UtcNow,
                 ExpiresAt = DateTime.UtcNow.AddDays(5),
                 IsRevoked = false,
-                User = user
+                //User = user
             };
 
             await _repoAutho.AddItemAsync(authorizationToken);
@@ -134,8 +131,12 @@ namespace ServiceLayer.UserStatus.Service
         public async Task<string> RegisterUserAsync(RegisterDto registerDto,string pathfile)
         {
             var userExit=await _repo.FirstOrderAsync(u => u.Email == registerDto.Email);
-            if(userExit!=null)
-                return _message.GetMessage(MessageKeys.FoundEmail, Language.English);
+            if (userExit != null)
+            {
+                mes = _message.GetMessage(MessageKeys.FoundEmail, Language.English);
+                return mes;
+            }
+                
             string salt;
             var hashpassword = _security.HashPassword(registerDto.Password,out salt);
 
@@ -151,16 +152,32 @@ namespace ServiceLayer.UserStatus.Service
             };
             await _repo.AddItemAsync(user);
 
+            await SandVerifiedTokenToEmail(user);
+
             return _message.GetMessage(MessageKeys.RegisterSuccess,Language.English);
         }
-       
 
-        
-        
-        //public Task LogoutAsync()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public async Task SandVerifiedTokenToEmail(User user)
+        {
+            var token = Guid.NewGuid().ToString();
+            var tokenEntity = new EmailVerificationToken
+            {
+                UserId = user.UserId,
+                Token = token,
+                ExpiryDate = DateTime.UtcNow.AddHours(24),
+            };
+            await _repoTokn.AddItemAsync(tokenEntity);
+
+            var verificationLink = $"https://localhost:7216/api/User/VerifyEmail?token={token}";
+
+            var body = $@"
+                <h2>Welcome {user.FullName}</h2>
+                <p>Please click the link below to verify your email:</p>
+                <a href='{verificationLink}'>Verify Email</a>
+            ";
+
+            await _email.SendEmailAsync(user.Email, "Email Verification", body);
+        }
 
     }
 }

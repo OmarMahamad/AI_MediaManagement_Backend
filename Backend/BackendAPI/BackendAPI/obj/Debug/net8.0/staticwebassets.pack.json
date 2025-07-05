@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg",
+      "PackagePath": "staticwebassets\\Image\\User\\2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg"
+    },
+    {
+      "Id": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\Userdefault.png",
+      "PackagePath": "staticwebassets\\Image\\User\\Userdefault.png"
+    },
+    {
+      "Id": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\b335ca54-5bb0-43c1-bbfb-6ece4d5cba0d.jpg",
+      "PackagePath": "staticwebassets\\Image\\User\\b335ca54-5bb0-43c1-bbfb-6ece4d5cba0d.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BackendAPI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BackendAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BackendAPI.props",
+      "PackagePath": "build\\BackendAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BackendAPI.props",
+      "PackagePath": "buildMultiTargeting\\BackendAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BackendAPI.props",
+      "PackagePath": "buildTransitive\\BackendAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

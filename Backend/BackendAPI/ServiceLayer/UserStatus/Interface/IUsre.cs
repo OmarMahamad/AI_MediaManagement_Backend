@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using RepositoryLayer.Entitys.UserEntity;
 using ServiceLayer.Dtos.userDtos;
 
 namespace ServiceLayer.UserStatus.Interface
@@ -19,7 +20,9 @@ namespace ServiceLayer.UserStatus.Interface
 
         Task<bool> EmailVerified(string email);
         Task<bool> IsEmailVerified(string email);
-
+        Task  SandVerifiedTokenToEmail(User user);
+        
+        
 
     }
 }

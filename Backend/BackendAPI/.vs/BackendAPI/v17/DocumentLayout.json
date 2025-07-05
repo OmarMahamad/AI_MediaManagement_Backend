@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{53F96EA0-2750-47B1-94B6-5480D203DB6E}|BackendAPI\\BackendAPI.csproj|d:\\git work\\work now\\fahd project\\backend\\backendapi\\backendapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{53F96EA0-2750-47B1-94B6-5480D203DB6E}|BackendAPI\\BackendAPI.csproj|solutionrelative:backendapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8A7134C6-699F-461F-9BDC-29448606900F}|ServiceLayer\\ServiceLayer.csproj|d:\\git work\\work now\\fahd project\\backend\\backendapi\\servicelayer\\userstatus\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A7134C6-699F-461F-9BDC-29448606900F}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\userstatus\\service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8A7134C6-699F-461F-9BDC-29448606900F}|ServiceLayer\\ServiceLayer.csproj|d:\\git work\\work now\\fahd project\\backend\\backendapi\\servicelayer\\userstatus\\interface\\iusre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8A7134C6-699F-461F-9BDC-29448606900F}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\userstatus\\interface\\iusre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8A7134C6-699F-461F-9BDC-29448606900F}|ServiceLayer\\ServiceLayer.csproj|d:\\git work\\work now\\fahd project\\backend\\backendapi\\servicelayer\\dtos\\userdtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8A7134C6-699F-461F-9BDC-29448606900F}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\dtos\\userdtos\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,40 +31,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AuthResponseDto.cs",
-              "DocumentMoniker": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\ServiceLayer\\Dtos\\userDtos\\AuthResponseDto.cs",
-              "RelativeDocumentMoniker": "ServiceLayer\\Dtos\\userDtos\\AuthResponseDto.cs",
-              "ToolTip": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\ServiceLayer\\Dtos\\userDtos\\AuthResponseDto.cs",
-              "RelativeToolTip": "ServiceLayer\\Dtos\\userDtos\\AuthResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T17:14:56.048Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\ServiceLayer\\UserStatus\\Service\\UserService.cs",
-              "RelativeDocumentMoniker": "ServiceLayer\\UserStatus\\Service\\UserService.cs",
-              "ToolTip": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\ServiceLayer\\UserStatus\\Service\\UserService.cs",
-              "RelativeToolTip": "ServiceLayer\\UserStatus\\Service\\UserService.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAgwIMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T22:01:28.415Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "IUsre.cs",
               "DocumentMoniker": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\ServiceLayer\\UserStatus\\Interface\\IUsre.cs",
               "RelativeDocumentMoniker": "ServiceLayer\\UserStatus\\Interface\\IUsre.cs",
               "ToolTip": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\ServiceLayer\\UserStatus\\Interface\\IUsre.cs",
               "RelativeToolTip": "ServiceLayer\\UserStatus\\Interface\\IUsre.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAwBYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T14:06:36.874Z",
+              "WhenOpened": "2025-07-05T11:35:31.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\ServiceLayer\\UserStatus\\Service\\UserService.cs",
+              "RelativeDocumentMoniker": "ServiceLayer\\UserStatus\\Service\\UserService.cs",
+              "ToolTip": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\ServiceLayer\\UserStatus\\Service\\UserService.cs",
+              "RelativeToolTip": "ServiceLayer\\UserStatus\\Service\\UserService.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAswIAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T08:49:19.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "BackendAPI\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\Controllers\\UserController.cs",
+              "RelativeToolTip": "BackendAPI\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAqwBAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T08:16:23.675Z",
               "EditorCaption": ""
             }
           ]

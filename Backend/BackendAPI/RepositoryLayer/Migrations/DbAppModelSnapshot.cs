@@ -57,6 +57,36 @@ namespace RepositoryLayer.Migrations
                     b.ToTable("authorizationTokens");
                 });
 
+            modelBuilder.Entity("RepositoryLayer.Entitys.AuthorizationEntity.EmailVerificationToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsUsed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Token");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("emailVerificationTokens");
+                });
+
             modelBuilder.Entity("RepositoryLayer.Entitys.AuthorizationEntity.OtpCode", b =>
                 {
                     b.Property<int>("OtpCodeId")
@@ -293,6 +323,17 @@ namespace RepositoryLayer.Migrations
                 });
 
             modelBuilder.Entity("RepositoryLayer.Entitys.AuthorizationEntity.AuthorizationToken", b =>
+                {
+                    b.HasOne("RepositoryLayer.Entitys.UserEntity.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("RepositoryLayer.Entitys.AuthorizationEntity.EmailVerificationToken", b =>
                 {
                     b.HasOne("RepositoryLayer.Entitys.UserEntity.User", "User")
                         .WithMany()

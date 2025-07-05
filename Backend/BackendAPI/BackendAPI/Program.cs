@@ -17,6 +17,7 @@ using ServiceLayer.UserStatus.Service;
 using HelperLayer.File.Service;
 using HelperLayer.File.Interface;
 using HelperLayer.Notifecation.Email.Service;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,7 +47,12 @@ builder.Services.AddAuthentication(options =>
 
 
 });
-
+// convert enum to string
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
 //var secc = builder.Configuration["Jwt:Key"];
 // Add services to the container.

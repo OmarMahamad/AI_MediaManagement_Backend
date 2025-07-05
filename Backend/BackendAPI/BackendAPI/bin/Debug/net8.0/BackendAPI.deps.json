@@ -1335,6 +1335,9 @@
         }
       },
       "SecurityLayer/1.0.0": {
+        "dependencies": {
+          "RepositoryLayer": "1.0.0"
+        },
         "runtime": {
           "SecurityLayer.dll": {
             "assemblyVersion": "1.0.0.0",

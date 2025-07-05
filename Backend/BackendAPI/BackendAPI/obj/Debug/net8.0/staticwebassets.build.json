@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dBDZOXlBnxcchWY49efYEykLgqcFoqXTC4TXLrcLl8Y=",
+  "Hash": "zjB3YuBEkD6CAc/2EouKePdQq6C2F1MW8IJSYBVzrNI=",
   "Source": "BackendAPI",
   "BasePath": "_content/BackendAPI",
   "Mode": "Default",
@@ -15,6 +15,317 @@
       "Pattern": "**"
     }
   ],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": [
+    {
+      "Identity": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg",
+      "SourceId": "BackendAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\",
+      "BasePath": "_content/BackendAPI",
+      "RelativePath": "Image/User/2c0ccd06-968f-43fb-ac4f-d2382e02b9ee#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mwc0snzw92",
+      "Integrity": "VslKv+xoChNhLvijNKfPWD/ZMWk05HlDAdW42wFB2A0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\User\\2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg"
+    },
+    {
+      "Identity": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\b335ca54-5bb0-43c1-bbfb-6ece4d5cba0d.jpg",
+      "SourceId": "BackendAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\",
+      "BasePath": "_content/BackendAPI",
+      "RelativePath": "Image/User/b335ca54-5bb0-43c1-bbfb-6ece4d5cba0d#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tk2jq28jdb",
+      "Integrity": "M4pCJsM5/IGZbbmdL+JOmAaVcXgktY0AgmmgHspoEcw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\User\\b335ca54-5bb0-43c1-bbfb-6ece4d5cba0d.jpg"
+    },
+    {
+      "Identity": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\Userdefault.png",
+      "SourceId": "BackendAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\",
+      "BasePath": "_content/BackendAPI",
+      "RelativePath": "Image/User/Userdefault#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xfyo8dh5hf",
+      "Integrity": "XXBt6o7oRxUSu+k1+f7hbZ9Kby6rdxGOhzxcbBE/1go=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\User\\Userdefault.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "Image/User/2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg",
+      "AssetFile": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "187118"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VslKv+xoChNhLvijNKfPWD/ZMWk05HlDAdW42wFB2A0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Jul 2025 11:00:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-VslKv+xoChNhLvijNKfPWD/ZMWk05HlDAdW42wFB2A0="
+        }
+      ]
+    },
+    {
+      "Route": "Image/User/2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.mwc0snzw92.jpg",
+      "AssetFile": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "187118"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"VslKv+xoChNhLvijNKfPWD/ZMWk05HlDAdW42wFB2A0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Jul 2025 11:00:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mwc0snzw92"
+        },
+        {
+          "Name": "label",
+          "Value": "Image/User/2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-VslKv+xoChNhLvijNKfPWD/ZMWk05HlDAdW42wFB2A0="
+        }
+      ]
+    },
+    {
+      "Route": "Image/User/b335ca54-5bb0-43c1-bbfb-6ece4d5cba0d.jpg",
+      "AssetFile": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\b335ca54-5bb0-43c1-bbfb-6ece4d5cba0d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "97523"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"M4pCJsM5/IGZbbmdL+JOmAaVcXgktY0AgmmgHspoEcw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Jul 2025 09:28:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-M4pCJsM5/IGZbbmdL+JOmAaVcXgktY0AgmmgHspoEcw="
+        }
+      ]
+    },
+    {
+      "Route": "Image/User/b335ca54-5bb0-43c1-bbfb-6ece4d5cba0d.tk2jq28jdb.jpg",
+      "AssetFile": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\b335ca54-5bb0-43c1-bbfb-6ece4d5cba0d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "97523"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"M4pCJsM5/IGZbbmdL+JOmAaVcXgktY0AgmmgHspoEcw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Jul 2025 09:28:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tk2jq28jdb"
+        },
+        {
+          "Name": "label",
+          "Value": "Image/User/b335ca54-5bb0-43c1-bbfb-6ece4d5cba0d.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-M4pCJsM5/IGZbbmdL+JOmAaVcXgktY0AgmmgHspoEcw="
+        }
+      ]
+    },
+    {
+      "Route": "Image/User/Userdefault.png",
+      "AssetFile": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\Userdefault.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1770"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XXBt6o7oRxUSu+k1+f7hbZ9Kby6rdxGOhzxcbBE/1go=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Jul 2025 08:33:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XXBt6o7oRxUSu+k1+f7hbZ9Kby6rdxGOhzxcbBE/1go="
+        }
+      ]
+    },
+    {
+      "Route": "Image/User/Userdefault.xfyo8dh5hf.png",
+      "AssetFile": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\Userdefault.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1770"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XXBt6o7oRxUSu+k1+f7hbZ9Kby6rdxGOhzxcbBE/1go=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Jul 2025 08:33:43 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xfyo8dh5hf"
+        },
+        {
+          "Name": "label",
+          "Value": "Image/User/Userdefault.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XXBt6o7oRxUSu+k1+f7hbZ9Kby6rdxGOhzxcbBE/1go="
+        }
+      ]
+    }
+  ]
 }
