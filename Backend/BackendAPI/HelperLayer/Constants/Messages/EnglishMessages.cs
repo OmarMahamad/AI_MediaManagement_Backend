@@ -25,6 +25,8 @@ namespace HelperLayer.Constants.Messages
         { MessageKeys.AccessCode, "This code is valid." },
         { MessageKeys.IsEmailVerified, "This Email not Verified." },
         { MessageKeys.RegisterSuccess, "Register successful." },
+        { MessageKeys.Invaliduserid, "Invalid user id." },
+        { MessageKeys.Success, "The operation was successful." },
 
     };
     }

@@ -7,9 +7,9 @@ D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\n
 D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.AssemblyInfoInputs.cache
 D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.AssemblyInfo.cs
 D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.csproj.CoreCompileInputs.cache
+D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.sourcelink.json
 D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.dll
 D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\refint\RepositoryLayer.dll
 D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.pdb
 D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.genruntimeconfig.cache
 D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\ref\RepositoryLayer.dll
-D:\Git work\work now\Fahd project\Backend\BackendAPI\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.sourcelink.json

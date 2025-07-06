@@ -23,6 +23,8 @@ namespace HelperLayer.Constants
         public const string CheckEmail = "Check your email.";
         public const string UsedCode = "This code has already been used.";
         public const string AccessCode = "This code is valid.";
+        public const string Invaliduserid = "Invalid user id.";
+        public const string Success = "The operation was successful.";
     }
 
 }

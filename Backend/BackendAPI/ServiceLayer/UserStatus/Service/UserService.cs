@@ -42,26 +42,97 @@ namespace ServiceLayer.UserStatus.Service
             _message = message;
         }
 
-        public async Task<string> CheckOtpCode(string code)
+        public async Task<AuthResponseDto> ChangePasswordAsync(ChangePassordDto passordDto)
+        {
+            var userEntity = await _repo.FirstOrderAsync(u => u.Email == passordDto.email);
+            if (userEntity == null)
+            {
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.EmailNotFound, Language.English)
+                };
+            }
+            var hach = _security.HashPassword(passordDto.NewPassword, out string salt);
+            userEntity.PasswordSalt = salt;
+            userEntity.PasswordHash = hach;
+            await _repo.EditItemAsync(userEntity.UserId,userEntity);
+            return new AuthResponseDto
+            {
+                IsSuccess = true,
+                Message = _message.GetMessage(MessageKeys.Success, Language.English)
+            };
+
+        }
+
+        public async Task<AuthResponseDto> CheckOtpCode(string code)
         {
             var codeEntity = await _repocode.FirstOrderAsync(c => c.Code == code);
             if (codeEntity == null)
-                return _message.GetMessage(MessageKeys.CodeNotFound, Language.English);
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.CodeNotFound, Language.English)
+                };
 
             if (codeEntity.IsUsed)
-                return _message.GetMessage(MessageKeys.UsedCode, Language.English);
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.UsedCode, Language.English)
+                };
 
             if (codeEntity.ExpiryDate <= DateTime.UtcNow)
-                return _message.GetMessage(MessageKeys.ExpiryDateCode, Language.English);
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.ExpiryDateCode, Language.English)
+                };
 
             // الكود سليم → نعدله إنه مستخدم
             codeEntity.IsUsed = true;
             await _repocode.EditItemAsync(codeEntity.OtpCodeId, codeEntity);
             await _repocode.DeleteItemAsync(codeEntity.OtpCodeId);
 
-            return _message.GetMessage(MessageKeys.AccessCode, Language.English);
+            return new AuthResponseDto { IsSuccess = true, Message = _message.GetMessage(MessageKeys.AccessCode, Language.English) };
         }
         public async Task DeleteUserAsync(int id)=> await _repo.DeleteItemAsync(id);
+
+        public async Task<AuthResponseDto> EditUserAsync(int id,EditUserDto editUserDto)
+        {
+            var user=await _repo.GetItemAsync(id);
+            if (user == null)
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.UserNotFound, Language.English)
+                };
+            await _repo.EditItemAsync(id, user);
+            return new AuthResponseDto
+            {
+                IsSuccess = true,
+                Message ="The modification process was successful."
+            };
+        }
+
+        public async Task<AuthResponseDto> EditUserAsync(int id, string pathfile)
+        {
+            var user = await _repo.GetItemAsync(id);
+            if (user == null)
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.UserNotFound, Language.English)
+                };
+            user.ImagePath= pathfile;
+            await _repo.EditItemAsync(id, user);
+            return new AuthResponseDto
+            {
+                IsSuccess = true,
+                Message = "The modification process was successful."
+            };
+        }
+
         public async Task<bool> EmailVerified(string email)
         {
             var user = await _repo.FirstOrderAsync(u => u.Email == email);
@@ -71,11 +142,15 @@ namespace ServiceLayer.UserStatus.Service
             await _repo.EditItemAsync(user.UserId, user);
             return true;
         }
-        public async Task<string> ForgotPasswordAsync(string email)
+        public async Task<AuthResponseDto> ForgotPasswordAsync(string email)
         {
             var user=await _repo.FirstOrderAsync(u=>u.Email == email);
             if (user == null)
-                return _message.GetMessage(MessageKeys.EmailNotFound, Language.English);
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.EmailNotFound, Language.English)
+                };
             var code = _security.GenerateOtpCode();
 
             OtpCode otpCode = new OtpCode()
@@ -88,8 +163,30 @@ namespace ServiceLayer.UserStatus.Service
             await _repocode.AddItemAsync(otpCode);
             await _email.SendEmailAsync(email, _message.GetMessage(MessageKeys.ResetPassword,Language.English), _message.GetMessage(MessageKeys.SendCode,Language.English,code));
 
-            return _message.GetMessage(MessageKeys.CheckEmail,Language.English);
+            return new AuthResponseDto { IsSuccess = true, Message = _message.GetMessage(MessageKeys.CheckEmail, Language.English) };
         }
+
+        public async Task<UserResponDto> GetUserByIDAsync(int id)
+        {
+            var user=await _repo.GetItemAsync(id);
+            if (user == null)
+            {
+                return new UserResponDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.UserNotFound, Language.English),
+                };
+            }
+            return new UserResponDto
+            {
+                IsSuccess = true,
+                Email = user.Email,
+                FullName = user.FullName,
+                ImagePath = user.ImagePath,
+                Message = ""
+            };
+        }
+
         public async Task<bool> IsEmailVerified(string email)
         {
             var userEntity = await _repo.FirstOrderAsync(u => u.Email == email);
@@ -97,23 +194,36 @@ namespace ServiceLayer.UserStatus.Service
 
             return userEntity.IsEmailVerified;
         }
-        public async Task<string> LoginAsync(LoginDto loginDto)
+        
+        public async Task<AuthResponseDto> LoginAsync(LoginDto loginDto)
         {
             var user = await _repo.FirstOrderAsync(u => u.Email == loginDto.Email);
             if (user == null)
-                return _message.GetMessage(MessageKeys.EmailNotFound, Language.English);
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.EmailNotFound, Language.English)
+                };
 
             if (!await IsEmailVerified(user.Email))
-                return _message.GetMessage(MessageKeys.IsEmailVerified, Language.English);
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.IsEmailVerified, Language.English)
+                };
 
             var passValid = _security.VerifyPassword(user.PasswordHash, loginDto.Password, user.PasswordSalt);
             if (!passValid)
-                return _message.GetMessage(MessageKeys.InvalidPassword, Language.English);
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.InvalidPassword, Language.English)
+                };
 
             var token = await _auth.GenerateTokenAsync(user);
             var refreshToken = await _auth.GenerateRefreshTokenAsync();
 
-            AuthorizationToken authorizationToken = new AuthorizationToken
+            var authorizationToken = new AuthorizationToken
             {
                 UserId = user.UserId,
                 AccessToken = token,
@@ -121,13 +231,38 @@ namespace ServiceLayer.UserStatus.Service
                 IssuedAt = DateTime.UtcNow,
                 ExpiresAt = DateTime.UtcNow.AddDays(5),
                 IsRevoked = false,
-                //User = user
             };
 
             await _repoAutho.AddItemAsync(authorizationToken);
 
-            return authorizationToken.AccessToken;
+            return new AuthResponseDto
+            {
+                IsSuccess = true,
+                Message = "Login Success",
+                AccessToken = token,
+                RefreshToken = refreshToken
+            };
         }
+
+        public async Task<AuthResponseDto> LogoutAsync(int id)
+        {
+            var Authuser=await _repoAutho.GetItemAsync(id);
+            if (Authuser == null)
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.UserNotFound,Language.English)
+                };
+            Authuser.IsRevoked = true;
+            await _repoAutho.EditItemAsync(Authuser.AuthorizationId,Authuser);
+            return new AuthResponseDto
+            {
+                IsSuccess = true,
+                Message="Logout user"
+            };
+
+        }
+
         public async Task<string> RegisterUserAsync(RegisterDto registerDto,string pathfile)
         {
             var userExit=await _repo.FirstOrderAsync(u => u.Email == registerDto.Email);

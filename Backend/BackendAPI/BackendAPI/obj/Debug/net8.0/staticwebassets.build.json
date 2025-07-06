@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zjB3YuBEkD6CAc/2EouKePdQq6C2F1MW8IJSYBVzrNI=",
+  "Hash": "z+bW+j2y+4yewJe9H1PMzXibEGIceWQggoRFQxtVuM4=",
   "Source": "BackendAPI",
   "BasePath": "_content/BackendAPI",
   "Mode": "Default",
@@ -36,6 +36,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Image\\User\\2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg"
+    },
+    {
+      "Identity": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\7025d7ae-28b9-4109-9ada-8b08075638a9.jpg",
+      "SourceId": "BackendAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\",
+      "BasePath": "_content/BackendAPI",
+      "RelativePath": "Image/User/7025d7ae-28b9-4109-9ada-8b08075638a9#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xzfw9muik4",
+      "Integrity": "A8avMx1jFcjOgNdl2hXAdUsr43S94SY95C0LBGs7yHc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\User\\7025d7ae-28b9-4109-9ada-8b08075638a9.jpg"
     },
     {
       "Identity": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\b335ca54-5bb0-43c1-bbfb-6ece4d5cba0d.jpg",
@@ -160,6 +181,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-VslKv+xoChNhLvijNKfPWD/ZMWk05HlDAdW42wFB2A0="
+        }
+      ]
+    },
+    {
+      "Route": "Image/User/7025d7ae-28b9-4109-9ada-8b08075638a9.jpg",
+      "AssetFile": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\7025d7ae-28b9-4109-9ada-8b08075638a9.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "211752"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"A8avMx1jFcjOgNdl2hXAdUsr43S94SY95C0LBGs7yHc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Jul 2025 11:46:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-A8avMx1jFcjOgNdl2hXAdUsr43S94SY95C0LBGs7yHc="
+        }
+      ]
+    },
+    {
+      "Route": "Image/User/7025d7ae-28b9-4109-9ada-8b08075638a9.xzfw9muik4.jpg",
+      "AssetFile": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\7025d7ae-28b9-4109-9ada-8b08075638a9.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "211752"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"A8avMx1jFcjOgNdl2hXAdUsr43S94SY95C0LBGs7yHc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 05 Jul 2025 11:46:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xzfw9muik4"
+        },
+        {
+          "Name": "label",
+          "Value": "Image/User/7025d7ae-28b9-4109-9ada-8b08075638a9.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-A8avMx1jFcjOgNdl2hXAdUsr43S94SY95C0LBGs7yHc="
         }
       ]
     },

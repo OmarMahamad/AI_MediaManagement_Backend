@@ -11,18 +11,20 @@ namespace ServiceLayer.UserStatus.Interface
 {
     public interface IUsre
     {
-        Task<string>LoginAsync(LoginDto loginDto);
-        //Task LogoutAsync();
+        Task<AuthResponseDto> LoginAsync(LoginDto loginDto);
         Task DeleteUserAsync(int id);
         Task<string> RegisterUserAsync(RegisterDto registerDto, string Pathfile);
-        Task<string> ForgotPasswordAsync(string email);
-        Task<string> CheckOtpCode(string code);
-
+        Task<AuthResponseDto> ForgotPasswordAsync(string email);
+        Task<AuthResponseDto> CheckOtpCode(string code);
+        Task <UserResponDto> GetUserByIDAsync(int id);
         Task<bool> EmailVerified(string email);
         Task<bool> IsEmailVerified(string email);
         Task  SandVerifiedTokenToEmail(User user);
-        
-        
+        Task<AuthResponseDto> LogoutAsync(int id);
+
+        Task<AuthResponseDto> EditUserAsync(int id,EditUserDto editUserDto);
+        Task<AuthResponseDto> EditUserAsync(int id,string pathfile);
+        Task<AuthResponseDto> ChangePasswordAsync(ChangePassordDto passordDto);
 
     }
 }
