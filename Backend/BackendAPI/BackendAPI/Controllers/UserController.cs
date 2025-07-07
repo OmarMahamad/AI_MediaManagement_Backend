@@ -1,9 +1,11 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
+using AuthorizationLayer.Interface;
 using HelperLayer.Constants;
 using HelperLayer.Constants.Services;
 using HelperLayer.File.Interface;
 using MailKit;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
@@ -27,93 +29,16 @@ namespace BackendAPI.Controllers
         private readonly IRepository<User> _repo;
         private readonly IRepository<EmailVerificationToken> _repoTokn;
 
+
         public UserController(IUsre usre, IFile file, MessageService message, IRepository<EmailVerificationToken> repoTokn, IRepository<User> repo)
         {
+            
             _repo = repo;
             _repoTokn = repoTokn;
             _message = message;
             _user = usre;
             _file = file;
         }
-
-
-        [HttpPost("RegisterUser")]
-        public async Task<IActionResult> Register([FromForm] RegisterDto registerDto, IFormFile? file)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var filepath = _file.ProcessFileUser(file, "User");
-
-            var reqister = await _user.RegisterUserAsync(registerDto, filepath);
-            string mes = _message.GetMessage(MessageKeys.FoundEmail, Language.English);
-            if (reqister == mes)
-            {
-                _ = _file.DeleteImageAsync(filepath, "User");
-                return BadRequest(mes);
-            }
-            mes = _message.GetMessage(MessageKeys.RegisterSuccess, Language.English);
-            return Ok(mes);
-        }
-
-
-        [HttpPost("LoginUser")]
-        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
-
-            var response = await _user.LoginAsync(loginDto);
-
-            if (!response.IsSuccess)
-                return BadRequest(response.Message);
-
-            return Ok(response);
-        }
-
-        [HttpGet("VerifyEmail")]
-        public async Task<IActionResult> VerifyEmail(string token)
-        {
-            var tokenEntity = await _repoTokn.FirstOrderAsync(t => t.Token == token);
-            if (tokenEntity == null || tokenEntity.IsUsed || tokenEntity.ExpiryDate < DateTime.UtcNow)
-                return BadRequest("Invalid or expired token");
-
-            var user = await _repo.GetItemAsync(tokenEntity.UserId);
-            if (user == null)
-                return BadRequest("User not found");
-
-            user.IsEmailVerified = true;
-            await _repo.EditItemAsync(user.UserId, user);
-
-            tokenEntity.IsUsed = true;
-            await _repoTokn.EditItemAsync(tokenEntity.Id, tokenEntity);
-
-            return Ok("Email verified successfully");
-        }
-
-        [HttpPost("Logout")]
-        public async Task<IActionResult> Logout()
-        {
-            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (userIdClaim == null)
-            {
-                return Unauthorized("Unauthorized access.");
-            }
-
-            if (!int.TryParse(userIdClaim, out int userId))
-            {
-                return BadRequest("Invalid user id.");
-            }
-
-            var logoutResult = await _user.LogoutAsync(userId);
-            if (!logoutResult.IsSuccess)
-                return BadRequest(logoutResult.Message);
-
-            return Ok(logoutResult.Message);
-        }
-
 
         [HttpDelete("RemoveUser")]
         public async Task<IActionResult> Delete()
@@ -164,6 +89,7 @@ namespace BackendAPI.Controllers
         }
         
         [HttpGet("GetCurrentUser")]
+        [Authorize]
         public async Task<IActionResult> GetCurrentUser()
         {
            var userClimId=User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -185,47 +111,7 @@ namespace BackendAPI.Controllers
             return Ok(userrespon);
         }
 
-        [HttpPost("ForgotPassword")]
-        public async Task<IActionResult> ForgotPassord(string email)
-        {
-            if (string.IsNullOrEmpty(email))
-                return BadRequest("Email is required.");
-
-            var respon =await _user.ForgotPasswordAsync(email);
-            if (!respon.IsSuccess)
-                return BadRequest(respon.Message);
-            return Ok(respon.Message);
-        }
-
-        [HttpGet("CheckOTP")]
-        public async Task<IActionResult> CheckOTP(string code)
-        {
-            if (string.IsNullOrEmpty(code))
-            {
-                return NotFound(_message.GetMessage(MessageKeys.Invaliduserid,Language.English));
-            }
-            var respon = await _user.CheckOtpCode(code);
-            if (!respon.IsSuccess)
-            {
-                return BadRequest(respon.Message);
-            }
-            return Ok(respon.Message);
-        }
-
-        [HttpPut("ChangePassword")]
-        public async Task<IActionResult> ChangePassword([FromBody]ChangePassordDto changePassord)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            var respone=await _user.ChangePasswordAsync(changePassord);
-            if (!respone.IsSuccess)
-            {
-                return BadRequest(respone.Message);
-            }
-            return Ok(respone.Message);
-        }
+       
 
         //[HttpGet("GetAllUser")]
         //public IActionResult GetAllUser()

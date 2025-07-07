@@ -19,6 +19,8 @@ using HelperLayer.File.Interface;
 using HelperLayer.Notifecation.Email.Service;
 using System.Text.Json.Serialization;
 using Microsoft.OpenApi.Models;
+using ServiceLayer.AuthorizationStatus.Interface;
+using ServiceLayer.AuthorizationStatus.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,16 +40,15 @@ builder.Services.AddAuthentication(options =>
         ValidIssuer = configuration["Jwt:Issuer"],
 
         ValidateAudience = true,
-        ValidAudiences = configuration.GetSection("Jwt:Audiences").Get<string[]>(),
+        ValidAudience = configuration["Jwt:Audience"], // ← Audience واحدة
 
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(
             Encoding.UTF8.GetBytes(configuration["Jwt:Key"]))
     };
-
-
 });
+
 // convert enum to string
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
@@ -100,6 +101,7 @@ builder.Services.AddDbContext<DbApp>(options => options.UseSqlServer(builder.Con
 builder.Services.AddScoped(typeof(IRepository<>), typeof(RepositoryService<>));
 builder.Services.AddScoped(typeof(IAuthorization), typeof(AuthorizationService));
 builder.Services.AddScoped(typeof(IUsre), typeof(UserService));
+builder.Services.AddScoped(typeof(IAuthStatus), typeof(AuthStatusService));
 builder.Services.AddTransient<Isecurity, SecurityService>();
 builder.Services.AddScoped<IFile, FileService>();
 builder.Services.AddTransient<IEmail, EmailService>();

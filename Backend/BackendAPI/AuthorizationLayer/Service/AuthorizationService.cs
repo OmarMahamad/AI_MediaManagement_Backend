@@ -31,18 +31,18 @@ namespace AuthorizationLayer.Service
         public Task<string> GenerateTokenAsync(User user)
         {
             var authClaims = new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
-                new Claim(ClaimTypes.Role, user.Role.ToString()),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            };
+    {
+        new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
+        new Claim(ClaimTypes.Role, user.Role.ToString()),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+    };
 
             var authSigningKey = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
 
             var token = new JwtSecurityToken(
                 issuer: _config["Jwt:Issuer"],
-                audience: _config["Jwt:Audience"],
+                audience: _config["Jwt:Audience"], // ← Audience متطابقة
                 expires: DateTime.UtcNow.AddMinutes(Convert.ToDouble(_config["Jwt:DurationInMinutes"])),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
@@ -51,6 +51,7 @@ namespace AuthorizationLayer.Service
             var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
             return Task.FromResult(tokenString);
         }
+
 
 
 

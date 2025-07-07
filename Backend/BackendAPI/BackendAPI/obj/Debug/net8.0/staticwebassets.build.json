@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "z+bW+j2y+4yewJe9H1PMzXibEGIceWQggoRFQxtVuM4=",
+  "Hash": "ryFLJLGo/EYCyALq57E+3nDXe89am7x7ldg//qmNxlY=",
   "Source": "BackendAPI",
   "BasePath": "_content/BackendAPI",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\247123ed-d473-4584-b82d-9d9ab532b832.jpeg",
+      "SourceId": "BackendAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\",
+      "BasePath": "_content/BackendAPI",
+      "RelativePath": "Image/User/247123ed-d473-4584-b82d-9d9ab532b832#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6ai9s0b0eg",
+      "Integrity": "zhAoqMd1oGF3baQ1AY1XsuY5qq3JzSwDCSsopP2J1c0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\User\\247123ed-d473-4584-b82d-9d9ab532b832.jpeg"
+    },
     {
       "Identity": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg",
       "SourceId": "BackendAPI",
@@ -102,6 +123,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "Image/User/247123ed-d473-4584-b82d-9d9ab532b832.6ai9s0b0eg.jpeg",
+      "AssetFile": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\247123ed-d473-4584-b82d-9d9ab532b832.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66423"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zhAoqMd1oGF3baQ1AY1XsuY5qq3JzSwDCSsopP2J1c0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Jul 2025 15:51:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6ai9s0b0eg"
+        },
+        {
+          "Name": "label",
+          "Value": "Image/User/247123ed-d473-4584-b82d-9d9ab532b832.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-zhAoqMd1oGF3baQ1AY1XsuY5qq3JzSwDCSsopP2J1c0="
+        }
+      ]
+    },
+    {
+      "Route": "Image/User/247123ed-d473-4584-b82d-9d9ab532b832.jpeg",
+      "AssetFile": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\247123ed-d473-4584-b82d-9d9ab532b832.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66423"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"zhAoqMd1oGF3baQ1AY1XsuY5qq3JzSwDCSsopP2J1c0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Jul 2025 15:51:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-zhAoqMd1oGF3baQ1AY1XsuY5qq3JzSwDCSsopP2J1c0="
+        }
+      ]
+    },
     {
       "Route": "Image/User/2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg",
       "AssetFile": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg",

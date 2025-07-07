@@ -5,10 +5,10 @@
     "version": "v1"
   },
   "paths": {
-    "/api/User/RegisterUser": {
+    "/api/Autho/RegisterUser": {
       "post": {
         "tags": [
-          "User"
+          "Autho"
         ],
         "requestBody": {
           "content": {
@@ -67,10 +67,10 @@
         }
       }
     },
-    "/api/User/LoginUser": {
+    "/api/Autho/LoginUser": {
       "post": {
         "tags": [
-          "User"
+          "Autho"
         ],
         "requestBody": {
           "content": {
@@ -98,10 +98,10 @@
         }
       }
     },
-    "/api/User/VerifyEmail": {
+    "/api/Autho/VerifyEmail": {
       "get": {
         "tags": [
-          "User"
+          "Autho"
         ],
         "parameters": [
           {
@@ -119,11 +119,84 @@
         }
       }
     },
-    "/api/User/Logout": {
+    "/api/Autho/Logout": {
       "post": {
         "tags": [
-          "User"
+          "Autho"
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Autho/ForgotPassword": {
+      "post": {
+        "tags": [
+          "Autho"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Autho/CheckOTP": {
+      "get": {
+        "tags": [
+          "Autho"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Autho/ChangePassword": {
+      "put": {
+        "tags": [
+          "Autho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePassordDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePassordDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePassordDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -202,79 +275,6 @@
         "tags": [
           "User"
         ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/User/ForgotPassword": {
-      "post": {
-        "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "email",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/User/CheckOTP": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "code",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/User/ChangePassword": {
-      "put": {
-        "tags": [
-          "User"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChangePassordDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChangePassordDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/ChangePassordDto"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "OK"

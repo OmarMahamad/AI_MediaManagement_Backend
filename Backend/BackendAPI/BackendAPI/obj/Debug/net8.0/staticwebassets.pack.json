@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\247123ed-d473-4584-b82d-9d9ab532b832.jpeg",
+      "PackagePath": "staticwebassets\\Image\\User\\247123ed-d473-4584-b82d-9d9ab532b832.jpeg"
+    },
+    {
       "Id": "D:\\Git work\\work now\\Fahd project\\Backend\\BackendAPI\\BackendAPI\\wwwroot\\Image\\User\\2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg",
       "PackagePath": "staticwebassets\\Image\\User\\2c0ccd06-968f-43fb-ac4f-d2382e02b9ee.jpg"
     },
