@@ -19,6 +19,8 @@ namespace ServiceLayer.AuthorizationStatus.Interface
         Task SandVerifiedTokenToEmail(User user);
         Task<AuthResponseDto> LogoutAsync(string token);
         Task<AuthResponseDto> ChangePasswordAsync(ChangePassordDto passordDto);
+        Task<AuthResponseDto> RefreshTokenAsync(string CurrentRefreshToken);
+
 
     }
 }

@@ -12,9 +12,10 @@ namespace ServiceLayer.UserStatus.Interface
     public interface IUsre
     {
         Task DeleteUserAsync(int id);
-        Task <UserResponDto> GetUserByIDAsync(int id);
+        Task <UserResponDto> GetCurantUserByIDAsync(int id);
         Task<AuthResponseDto> EditUserAsync(int id,EditUserDto editUserDto);
         Task<AuthResponseDto> EditUserAsync(int id,string pathfile);
+        Task<UserResponDto> GetUserByIDAsync(int id);
 
     }
 }

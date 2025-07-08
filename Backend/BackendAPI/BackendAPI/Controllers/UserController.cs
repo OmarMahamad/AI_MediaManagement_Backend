@@ -26,15 +26,11 @@ namespace BackendAPI.Controllers
         private readonly IUsre _user;
         private readonly IFile _file;
         private readonly MessageService _message;
-        private readonly IRepository<User> _repo;
-        private readonly IRepository<EmailVerificationToken> _repoTokn;
 
 
-        public UserController(IUsre usre, IFile file, MessageService message, IRepository<EmailVerificationToken> repoTokn, IRepository<User> repo)
+        public UserController(IUsre usre, IFile file, MessageService message)
         {
-            
-            _repo = repo;
-            _repoTokn = repoTokn;
+
             _message = message;
             _user = usre;
             _file = file;
@@ -80,7 +76,7 @@ namespace BackendAPI.Controllers
         {
             if (id <= 0) return BadRequest("Invalid user id.");
 
-            var userrespon = await _user.GetUserByIDAsync(id);
+            var userrespon = await _user.GetCurantUserByIDAsync(id);
             if (!userrespon.IsSuccess)
             {
                 return NotFound();
@@ -102,7 +98,7 @@ namespace BackendAPI.Controllers
                 return BadRequest("Invalid user id.");
             }
 
-            var userrespon = await _user.GetUserByIDAsync(userid);
+            var userrespon = await _user.GetCurantUserByIDAsync(userid);
             if (!userrespon.IsSuccess)
             {
                 return NotFound();
@@ -111,13 +107,6 @@ namespace BackendAPI.Controllers
             return Ok(userrespon);
         }
 
-       
-
-        //[HttpGet("GetAllUser")]
-        //public IActionResult GetAllUser()
-        //{
-
-        //}
 
         [HttpPut("UpdateImageUser")]
         public async Task<IActionResult> UpdateImageUser(IFormFile file)
@@ -135,6 +124,8 @@ namespace BackendAPI.Controllers
             {
                 return BadRequest("Invalid input");
             }
+            var userentity= await _user.GetUserByIDAsync(userid);
+            await _file.DeleteImageAsync(userentity.ImagePath,"User");
             var newfilepath = _file.ProcessFileUser(file, "User");
 
             var respon=await _user.EditUserAsync(userid, newfilepath);

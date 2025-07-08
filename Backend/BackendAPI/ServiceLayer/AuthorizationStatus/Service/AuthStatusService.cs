@@ -17,7 +17,7 @@ using ServiceLayer.Dtos.userDtos;
 
 namespace ServiceLayer.AuthorizationStatus.Service
 {
-    public class AuthStatusService: IAuthStatus
+    public class AuthStatusService : IAuthStatus
     {
         private readonly Isecurity _security;
         private readonly IAuthorization _auth;
@@ -258,6 +258,44 @@ namespace ServiceLayer.AuthorizationStatus.Service
             await _email.SendEmailAsync(email, _message.GetMessage(MessageKeys.ResetPassword, Language.English), _message.GetMessage(MessageKeys.SendCode, Language.English, code));
 
             return new AuthResponseDto { IsSuccess = true, Message = _message.GetMessage(MessageKeys.CheckEmail, Language.English) };
+        }
+
+        public async Task<AuthResponseDto> RefreshTokenAsync(string CurrentRefreshToken)
+        {
+            var reftoken = await _repoAutho.FirstOrderAsync(a => a.RefreshToken == CurrentRefreshToken);
+            if (reftoken == null)
+            {
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.CodeNotFound, Language.English)
+                };
+            }
+
+            if (reftoken.IsRevoked)
+            {
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = "This Token is Revoked"
+                };
+            }
+            if (reftoken.ExpiresAt < DateTime.UtcNow)
+            {
+                return new AuthResponseDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.ExpiryDateCode, Language.English)
+                };
+            }
+            var userEntity=await _repo.GetItemAsync(reftoken.UserId);
+            var newacssesToken = await _auth.GenerateTokenAsync(userEntity);
+            return new AuthResponseDto
+            {
+                IsSuccess = true,
+                Message = _message.GetMessage(MessageKeys.Success, Language.English),
+                AccessToken = newacssesToken
+            };
         }
     }
 }

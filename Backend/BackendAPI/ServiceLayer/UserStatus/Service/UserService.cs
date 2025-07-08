@@ -34,11 +34,11 @@ namespace ServiceLayer.UserStatus.Service
         }
 
 
-        public async Task DeleteUserAsync(int id)=> await _repo.DeleteItemAsync(id);
+        public async Task DeleteUserAsync(int id) => await _repo.DeleteItemAsync(id);
 
-        public async Task<AuthResponseDto> EditUserAsync(int id,EditUserDto editUserDto)
+        public async Task<AuthResponseDto> EditUserAsync(int id, EditUserDto editUserDto)
         {
-            var user=await _repo.GetItemAsync(id);
+            var user = await _repo.GetItemAsync(id);
             if (user == null)
                 return new AuthResponseDto
                 {
@@ -50,7 +50,7 @@ namespace ServiceLayer.UserStatus.Service
             return new AuthResponseDto
             {
                 IsSuccess = true,
-                Message ="The modification process was successful."
+                Message = "The modification process was successful."
             };
         }
 
@@ -63,7 +63,7 @@ namespace ServiceLayer.UserStatus.Service
                     IsSuccess = false,
                     Message = _message.GetMessage(MessageKeys.UserNotFound, Language.English)
                 };
-            user.ImagePath= pathfile;
+            user.ImagePath = pathfile;
             await _repo.EditItemAsync(id, user);
             return new AuthResponseDto
             {
@@ -72,9 +72,9 @@ namespace ServiceLayer.UserStatus.Service
             };
         }
 
-        public async Task<UserResponDto> GetUserByIDAsync(int id)
+        public async Task<UserResponDto> GetCurantUserByIDAsync(int id)
         {
-            var user=await _repo.GetItemAsync(id);
+            var user = await _repo.GetItemAsync(id);
             if (user == null)
             {
                 return new UserResponDto
@@ -83,8 +83,8 @@ namespace ServiceLayer.UserStatus.Service
                     Message = _message.GetMessage(MessageKeys.UserNotFound, Language.English),
                 };
             }
-            var authoentity = await _repoAutho.FirstOrderAsync(a=>!a.IsRevoked);
-            if (authoentity==null)
+            var authoentity = await _repoAutho.FirstOrderAsync(a => !a.IsRevoked);
+            if (authoentity == null)
             {
                 return new UserResponDto
                 {
@@ -109,7 +109,25 @@ namespace ServiceLayer.UserStatus.Service
             };
         }
 
-        
-
+        public async Task<UserResponDto> GetUserByIDAsync(int id)
+        {
+            var userEntity = await _repo.GetItemAsync(id);
+            if (userEntity == null)
+            {
+                return new UserResponDto
+                {
+                    IsSuccess = false,
+                    Message = _message.GetMessage(MessageKeys.UserNotFound, Language.English)
+                };
+            }
+            return new UserResponDto
+            {
+                IsSuccess = true,
+                Message = _message.GetMessage(MessageKeys.Success, Language.English),
+                Email = userEntity.Email,
+                FullName = userEntity.FullName,
+                ImagePath = userEntity.ImagePath,
+            };
+        }
     }
 }

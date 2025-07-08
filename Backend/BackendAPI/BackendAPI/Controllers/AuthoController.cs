@@ -1,4 +1,5 @@
 ﻿using System.Security.Claims;
+using System.Threading.Tasks;
 using HelperLayer.Constants;
 using HelperLayer.Constants.Services;
 using HelperLayer.File.Interface;
@@ -51,7 +52,6 @@ namespace BackendAPI.Controllers
             return Ok(reqister.Message);
         }
 
-
         [HttpPost("LoginUser")]
         public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
@@ -103,7 +103,6 @@ namespace BackendAPI.Controllers
             return Ok(logoutResult.Message);
         }
 
-
         [HttpPost("ForgotPassword")]
         public async Task<IActionResult> ForgotPassord(string email)
         {
@@ -145,5 +144,27 @@ namespace BackendAPI.Controllers
             }
             return Ok(respone.Message);
         }
+
+        [HttpPost("RefreshToken")]
+        public async Task<IActionResult> RefreshToken(string CurrentRefreshToken)
+        {
+            if (string.IsNullOrEmpty(CurrentRefreshToken))
+                return BadRequest("Invalid or expired token");
+
+            var refprocess = await _authStatus.RefreshTokenAsync(CurrentRefreshToken);
+
+            if (!refprocess.IsSuccess)
+                return Unauthorized(refprocess.Message);
+
+            return Ok(new 
+            {
+                AccessToken = refprocess.AccessToken,
+                Message = refprocess.Message
+            });
+        }
+
+
+
+
     }
 }
