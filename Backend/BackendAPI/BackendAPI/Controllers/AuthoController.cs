@@ -33,18 +33,45 @@ namespace BackendAPI.Controllers
             _user = usre;
             _file = file;
         }
+        
         [HttpPost("RegisterUser")]
         public async Task<IActionResult> Register([FromForm] RegisterDto registerDto, IFormFile? file)
         {
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            string filepath;
+            var reqister = new AuthResponseDto();
+            
+            switch (registerDto.Role)
+            {
+                case RoleType.Financial_Accounts:
+                    {
+                        var userClimRole = User.FindFirst(ClaimTypes.Role)?.Value;
+                        if (userClimRole != RoleType.Admin.ToString())
+                            return Unauthorized("Unauthorized access .");
+                       
+                        filepath = _file.ProcessFileUser(file, "User");
 
-            var filepath = _file.ProcessFileUser(file, "User");
+                        reqister = await _authStatus.RegisterUserAsync(registerDto, filepath);
+                        if (!reqister.IsSuccess)
+                        {
+                            _ = _file.DeleteImageAsync(filepath, "User");
+                            return BadRequest(reqister.Message);
+                        }
+                        return Ok(reqister.Message);
+                    }
+                default:
+                    break;
 
-            var reqister = await _authStatus.RegisterUserAsync(registerDto, filepath);
-            if (reqister.IsSuccess)
+            }
+
+            filepath = _file.ProcessFileUser(file, "User");
+            reqister = await _authStatus.RegisterUserAsync(registerDto, filepath);
+            
+            if (!reqister.IsSuccess)
             {
                 _ = _file.DeleteImageAsync(filepath, "User");
                 return BadRequest(reqister.Message);

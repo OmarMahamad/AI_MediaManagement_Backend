@@ -26,7 +26,7 @@ namespace HelperLayer.Notifecation.Email.Service
             try
             {
                 var message = new MimeMessage();
-                message.From.Add(new MailboxAddress("All one Blood", smtpUser));
+                message.From.Add(new MailboxAddress("Fahd app test", smtpUser));
                 message.To.Add(new MailboxAddress("", toEmail));
                 message.Subject = subject;
 

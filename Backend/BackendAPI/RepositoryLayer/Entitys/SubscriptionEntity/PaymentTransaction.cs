@@ -10,7 +10,7 @@ using RepositoryLayer.Entitys.UserEntity;
 
 namespace RepositoryLayer.Entitys.SubscriptionEntity
 {
-
+    [Index(nameof(SubscriptionPaypalId), IsUnique = true)]
     public class PaymentTransaction
     {
         [Key]
@@ -18,23 +18,14 @@ namespace RepositoryLayer.Entitys.SubscriptionEntity
 
         [Required]
         public int SubscriptionId { get; set; }
-
         [Required]
-        [Precision(10, 2)]
-        public decimal Amount { get; set; }
+        public int UserId { get; set; }
+        [Required]
+        public string SubscriptionPaypalId { get; set; }
 
         [Required]
         [EnumDataType(typeof(PaymentMethodType))]
         public PaymentMethodType PaymentMethod { get; set; }
-
-        [Required]
-        public DateTime PaymentDate { get; set; }
-
-        [Required]
-        public DateTime SubscriptionStart { get; set; }
-
-        [Required]
-        public DateTime SubscriptionEnd { get; set; }
 
         [Required]
         [EnumDataType(typeof(StatusType))]
@@ -42,9 +33,6 @@ namespace RepositoryLayer.Entitys.SubscriptionEntity
 
         [ForeignKey(nameof(SubscriptionId))]
         public Subscription Subscription { get; set; }
-
-        [Required]
-        public int UserId { get; set; }
 
         [ForeignKey(nameof(UserId))]
         public User User { get; set; }

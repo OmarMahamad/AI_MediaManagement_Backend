@@ -168,27 +168,18 @@ namespace RepositoryLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentTransactionId"));
 
-                    b.Property<decimal>("Amount")
-                        .HasPrecision(10, 2)
-                        .HasColumnType("decimal(10,2)");
-
-                    b.Property<DateTime>("PaymentDate")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("PaymentMethod")
                         .HasColumnType("int");
 
                     b.Property<int>("PaymentTransactionStatus")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("SubscriptionEnd")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("SubscriptionId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("SubscriptionStart")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("SubscriptionPaypalId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -196,6 +187,9 @@ namespace RepositoryLayer.Migrations
                     b.HasKey("PaymentTransactionId");
 
                     b.HasIndex("SubscriptionId");
+
+                    b.HasIndex("SubscriptionPaypalId")
+                        .IsUnique();
 
                     b.HasIndex("UserId");
 
@@ -211,7 +205,6 @@ namespace RepositoryLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SubscriptionId"));
 
                     b.Property<string>("AcousticCharacteristics")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Amount")
@@ -229,16 +222,26 @@ namespace RepositoryLayer.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("NumberOfLetters")
+                    b.Property<int?>("NumberOfLetters")
                         .HasColumnType("int");
+
+                    b.Property<string>("ProductId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TimeOfSubscription")
                         .HasColumnType("int");
 
-                    b.Property<int>("VideoQuality")
+                    b.Property<int?>("VideoQuality")
                         .HasColumnType("int");
 
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("SubscriptionId");
+
+                    b.HasIndex("Name");
 
                     b.ToTable("subscriptions");
                 });

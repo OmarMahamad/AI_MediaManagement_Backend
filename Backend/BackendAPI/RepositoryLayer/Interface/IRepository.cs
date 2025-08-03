@@ -15,7 +15,7 @@ namespace RepositoryLayer.Interface
         Task EditItemAsync(int id,T item);
         Task<bool> FindAnyValue(Expression<Func<T,bool>> predicate);
         Task<T?> FirstOrderAsync(Expression<Func<T, bool>>? predicate);
-        Task<T> FilterByWhereAsync(Expression<Func<T,bool>>? predicate=null);
+        Task<IEnumerable<T>> FilterByWhereAsync(Expression<Func<T, bool>>? predicate = null);
 
 
     }

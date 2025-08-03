@@ -194,3 +194,11 @@ D:\Git work\work now\Fahd project\Backend\BackendAPI\BackendAPI\bin\Debug\net8.0
 D:\Git work\work now\Fahd project\Backend\BackendAPI\BackendAPI\bin\Debug\net8.0\BackendAPI.pdb
 D:\Git work\work now\Fahd project\Backend\BackendAPI\BackendAPI\obj\Debug\net8.0\BackendAPI.genruntimeconfig.cache
 D:\Git work\work now\Fahd project\Backend\BackendAPI\BackendAPI\obj\Debug\net8.0\ref\BackendAPI.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\BackendAPI\bin\Debug\net8.0\Crc32.NET.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\BackendAPI\bin\Debug\net8.0\ElCamino.PayPalCheckoutSdk.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\BackendAPI\bin\Debug\net8.0\ElCamino.PayPalHttp.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\BackendAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\BackendAPI\bin\Debug\net8.0\PaymentLayer.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\BackendAPI\bin\Debug\net8.0\PaymentLayer.pdb
+D:\Git work\work now\Fahd project\Backend\BackendAPI\BackendAPI\bin\Debug\net8.0\IdentityModel.dll
+D:\Git work\work now\Fahd project\Backend\BackendAPI\BackendAPI\bin\Debug\net8.0\IdentityModel.AspNetCore.OAuth2Introspection.dll

@@ -45,15 +45,16 @@ namespace RepositoryLayer.Service
         }
 
 
-        public Task<T> FilterByWhereAsync(Expression<Func<T, bool>>? predicate = null)
+        public Task<IEnumerable<T>> FilterByWhereAsync(Expression<Func<T, bool>>? predicate = null)
         {
             var query = _dbSet.AsNoTracking();
 
             if (predicate != null)
                 query = query.Where(predicate);
 
-            return query.FirstOrDefaultAsync();
+            return Task.FromResult<IEnumerable<T>>(query.ToList());
         }
+
 
 
         public Task<bool> FindAnyValue(Expression<Func<T, bool>> predicate)

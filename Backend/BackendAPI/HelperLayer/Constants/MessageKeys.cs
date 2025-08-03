@@ -9,11 +9,13 @@ namespace HelperLayer.Constants
     public static class MessageKeys
     {
         public const string UserNotFound = "User not found.";
+        public const string FoundName = "This Plane already exists.";
         public const string InvalidPassword = "Invalid password.";
         public const string SubscriptionExpired = "Subscription expired.";
         public const string LoginSuccess = "Login successful.";
         public const string RegisterSuccess = "Register successful.";
         public const string EmailNotFound = "This email not found.";
+        public const string SubNotFound = "This Plan not found.";
         public const string IsEmailVerified = "This email is not verified.";
         public const string FoundEmail = "This email already exists.";
         public const string CodeNotFound = "This code not found.";

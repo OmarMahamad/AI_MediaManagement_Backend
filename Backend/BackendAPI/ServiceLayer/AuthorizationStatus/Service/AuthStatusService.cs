@@ -164,7 +164,7 @@ namespace ServiceLayer.AuthorizationStatus.Service
             };
             await _repoTokn.AddItemAsync(tokenEntity);
 
-            var verificationLink = $"https://localhost:7216/api/User/VerifyEmail?token={token}";
+            var verificationLink = $"https://localhost:7216/api/Autho/VerifyEmail?token={token}";
             var body = $@"
                 <h2>Welcome {user.FullName}</h2>
                 <p>Please click the link below to verify your email:</p>
@@ -252,7 +252,6 @@ namespace ServiceLayer.AuthorizationStatus.Service
                 Code = code,
                 UserId = user.UserId,
                 ExpiryDate = DateTime.UtcNow.AddMinutes(10),
-                User = user,
             };
             await _repocode.AddItemAsync(otpCode);
             await _email.SendEmailAsync(email, _message.GetMessage(MessageKeys.ResetPassword, Language.English), _message.GetMessage(MessageKeys.SendCode, Language.English, code));

@@ -10,7 +10,6 @@ using AuthorizationLayer.Service;
 using SecurityLayer.Intercafe;
 using SecurityLayer.Service;
 using HelperLayer.Notifecation.Email.Interface;
-
 using HelperLayer.Constants.Services;
 using ServiceLayer.UserStatus.Interface;
 using ServiceLayer.UserStatus.Service;
@@ -21,6 +20,13 @@ using System.Text.Json.Serialization;
 using Microsoft.OpenApi.Models;
 using ServiceLayer.AuthorizationStatus.Interface;
 using ServiceLayer.AuthorizationStatus.Service;
+using ServiceLayer.SubscriptionService.Interface;
+using ServiceLayer.SubscriptionService.Service;
+using PaymentLayer.PaypalService.Interface;
+using PaymentLayer.PaypalService.Service;
+using ServiceLayer.PaymentTransactionService.Interface;
+using ServiceLayer.PaymentTransactionService.Service;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -102,6 +108,12 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(RepositoryService<>));
 builder.Services.AddScoped(typeof(IAuthorization), typeof(AuthorizationService));
 builder.Services.AddScoped(typeof(IUsre), typeof(UserService));
 builder.Services.AddScoped(typeof(IAuthStatus), typeof(AuthStatusService));
+builder.Services.AddScoped(typeof(ISubscription), typeof(SubscriptionService));
+builder.Services.AddScoped(typeof(IPayment), typeof(PymentService));
+
+builder.Services.AddHttpClient<IPaypal,PaypalServiceApi>();
+
+
 builder.Services.AddTransient<Isecurity, SecurityService>();
 builder.Services.AddScoped<IFile, FileService>();
 builder.Services.AddTransient<IEmail, EmailService>();
@@ -109,6 +121,7 @@ builder.Services.AddSingleton<MessageService>();
 
 // key: r2YX/FMEHXD9I2wF3ySuUR21mGU/bIvhBL91ZgUnG06xT/5IohJstojMuM9Vt4aXVFd0VHTc5714OGpK7SC2qw==
 
+// paypal
 
 // Add Cors
 builder.Services.AddCors(options =>

@@ -8,10 +8,13 @@ namespace RepositoryLayer.Entitys.SubscriptionEntity
 {
     public enum StatusType
     {
-        Panding,
-        Paid,
-        Failed,
-        Cancelled,
-        Refunded
+        ApprovalPending, // بعد إنشاء الاشتراك وقبل أن يوافق المستخدم على الدفع
+        Approved,         // المستخدم وافق لكن لم يُفعل بعد
+        Active,           // الاشتراك مفعل
+        Suspended,        // توقف مؤقت (بسبب فشل الدفع أو إجراء يدوي)
+        Cancelled,        // تم إلغاؤه نهائيًا
+        Expired,          // انتهت المدة المحددة
+        PaymentFailed,    // فشل في محاولة الدفع
+        Refunded          // تم رد المبلغ
     }
 }

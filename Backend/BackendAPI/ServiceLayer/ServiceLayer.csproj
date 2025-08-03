@@ -9,7 +9,16 @@
   <ItemGroup>
     <ProjectReference Include="..\AuthorizationLayer\AuthorizationLayer.csproj" />
     <ProjectReference Include="..\HelperLayer\HelperLayer.csproj" />
+    <ProjectReference Include="..\PaymentLayer\PaymentLayer.csproj" />
     <ProjectReference Include="..\SecurityLayer\SecurityLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ElCamino.PayPalCheckoutSdk" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="PaymentMethodService\Service\" />
   </ItemGroup>
 
 </Project>
